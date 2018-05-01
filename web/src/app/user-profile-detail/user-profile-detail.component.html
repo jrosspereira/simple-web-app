@@ -1,11 +1,29 @@
 <div *ngIf="userProfile">
 
-  <h2>{{ userProfile.fullName | uppercase }} Details</h2>
-  <div><span>id: </span>{{userProfile.id}}</div>
   <div>
-    <label>name:
-      <input [(ngModel)]="userProfile.fullName" placeholder="name"/>
-    </label>
+    <span>
+      <img [src]="userProfile.picture">
+    </span>
+    <strong>{{ userProfile.fullName }}</strong>
+  </div>
+  <div>
+    <strong>ID: </strong>{{userProfile.id}}
+  </div>
+  <div>
+    <strong>Profile: </strong>
+    <div>{{userProfile.profile}}</div>
+  </div>
+  <div>
+    <strong>Phone: </strong>{{userProfile.phone}}
+  </div>
+  <div>
+    <strong>Address: </strong>{{userProfile.address}}
+  </div>
+  <div>
+    <strong>Age: </strong>{{userProfile.age}}
+  </div>
+  <div>
+    <strong>Balance: </strong>{{userProfile.balance}}
   </div>
 
   <button (click)="goBack()">go back</button>

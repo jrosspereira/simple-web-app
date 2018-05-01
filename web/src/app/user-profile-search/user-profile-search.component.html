@@ -1,7 +1,6 @@
 <div id="search-component">
-  <h4>Profile Search</h4>
 
-  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="Search"/>
 
   <ul class="search-result">
     <li *ngFor="let user of userProfiles$ | async" >

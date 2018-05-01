@@ -4,12 +4,31 @@
 
   <app-user-profile-search></app-user-profile-search>
 
-  <ul class="profile-list">
-    <li *ngFor="let user of userProfiles" routerLink="view/{{user.id}}">
-      <span class="badge">{{user.id}}</span> {{user.fullName}}
-    </li>
-  </ul>
+  <div class="table-responsive">
+    <table class="table table-hover table-bordered profile-list">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th class="center">Active</th>
+          <th class="center">Blocked</th>
+        </tr>
+      </thead>
+      <tr *ngFor="let user of userProfiles" routerLink="view/{{user.id}}">
+        <td>{{user.fullName}}</td>
+        <td>{{user.age}}</td>
+        <td class="center">
+          <div *ngIf="user.active; then active else inactive"></div>
+        </td>
+        <td class="center">
+          <div *ngIf="user.blocked; then active else inactive"></div>
+        </td>
+      </tr>
+    </table>
 
+    <ng-template #active><i class="fa fa-check-square"></i></ng-template>
+    <ng-template #inactive><i class="fa fa-minus-square"></i></ng-template>
+  </div>
 </div>
 
 

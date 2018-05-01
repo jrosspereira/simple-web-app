@@ -136,9 +136,7 @@ public class UserProfile implements Serializable{
 
     public String getFullName(){
         if(this.getName() != null){
-            return this.getName().getFirst() + " " +
-                    this.getName().getMiddle() + " " +
-                    this.getName().getLast();
+            return this.getName().getFirst() + " " + this.getName().getLast();
         }
        return null;
     }
