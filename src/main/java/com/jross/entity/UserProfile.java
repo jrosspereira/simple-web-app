@@ -1,5 +1,7 @@
 package com.jross.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -11,10 +13,11 @@ public class UserProfile implements Serializable{
 
     private static final long serialVersionUID = 2496674687959533223L;
 
-    private Long id;
+    private String id;
 
     private UserName name;
 
+    @JsonProperty("date_registered")
     private Date dateRegistered;
 
     private Integer age;
@@ -29,7 +32,7 @@ public class UserProfile implements Serializable{
 
     private String profile;
 
-    private Double balance;
+    private String balance;
 
     private Boolean active;
 
@@ -39,11 +42,11 @@ public class UserProfile implements Serializable{
         return serialVersionUID;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -111,11 +114,11 @@ public class UserProfile implements Serializable{
         this.profile = profile;
     }
 
-    public Double getBalance() {
+    public String getBalance() {
         return balance;
     }
 
-    public void setBalance(Double balance) {
+    public void setBalance(String balance) {
         this.balance = balance;
     }
 

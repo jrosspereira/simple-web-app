@@ -1,7 +1,6 @@
 package com.jross.service;
 
 import com.jross.entity.UserProfile;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -12,5 +11,7 @@ import java.util.List;
  */
 public interface ProfileService {
 
-    List<UserProfile> profiles();
+    List<UserProfile> getProfiles();
+
+    UserProfile getProfile(String id);
 }
