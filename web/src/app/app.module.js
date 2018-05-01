@@ -13,6 +13,8 @@ var forms_1 = require('@angular/forms');
 var user_profile_detail_component_1 = require('./user-profile-detail/user-profile-detail.component');
 var user_profile_service_1 = require('./user-profile.service');
 var app_routing_module_1 = require('.//app-routing.module');
+var http_1 = require('@angular/common/http');
+var user_profile_search_component_1 = require('./user-profile-search/user-profile-search.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -21,12 +23,14 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent,
                 profiles_component_1.ProfilesComponent,
-                user_profile_detail_component_1.UserProfileDetailComponent
+                user_profile_detail_component_1.UserProfileDetailComponent,
+                user_profile_search_component_1.UserProfileSearchComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                app_routing_module_1.AppRoutingModule
+                app_routing_module_1.AppRoutingModule,
+                http_1.HttpClientModule
             ],
             providers: [
                 user_profile_service_1.UserProfileService

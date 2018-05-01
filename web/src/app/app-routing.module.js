@@ -6,16 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
+var router_1 = require('@angular/router');
+var profiles_component_1 = require('./profiles/profiles.component');
+var user_profile_detail_component_1 = require('./user-profile-detail/user-profile-detail.component');
+var routes = [
+    { path: '', component: profiles_component_1.ProfilesComponent },
+    { path: 'view/:id', component: user_profile_detail_component_1.UserProfileDetailComponent }
+];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = __decorate([
         core_1.NgModule({
-            imports: [
-                common_1.CommonModule
-            ],
-            declarations: []
+            imports: [router_1.RouterModule.forRoot(routes)],
+            exports: [router_1.RouterModule]
         })
     ], AppRoutingModule);
     return AppRoutingModule;

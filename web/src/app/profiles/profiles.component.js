@@ -19,9 +19,6 @@ var ProfilesComponent = (function () {
             .getUserProfiles()
             .subscribe(function (userProfiles) { return _this.userProfiles = userProfiles; });
     };
-    ProfilesComponent.prototype.onSelect = function (userProfile) {
-        this.selectedUserProfile = userProfile;
-    };
     ProfilesComponent = __decorate([
         core_1.Component({
             selector: 'app-profiles',

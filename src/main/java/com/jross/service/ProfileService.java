@@ -14,4 +14,6 @@ public interface ProfileService {
     List<UserProfile> getProfiles();
 
     UserProfile getProfile(String id);
+
+    List<UserProfile> getProfileByName(String term);
 }

@@ -3,6 +3,7 @@ package com.jross.service.impl;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jross.entity.UserName;
 import com.jross.entity.UserProfile;
 import com.jross.service.ProfileService;
 import com.jross.util.JsonFetcherUtil;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -61,5 +63,22 @@ public class ProfileServiceImpl implements ProfileService {
         }
 
         return null;
+    }
+
+    @Override
+    public List<UserProfile> getProfileByName(String term) {
+        List<UserProfile> userProfiles = this.getProfiles();
+        final String termLowerCase = term.toLowerCase();
+
+        List<UserProfile> profileList =
+                userProfiles.stream()
+                        .filter(u -> {
+                            UserName name = u.getName();
+                            return name.getFirst().toLowerCase().contains(termLowerCase) ||
+                                    name.getLast().toLowerCase().contains(termLowerCase);
+                        })
+                        .collect(Collectors.toList());
+
+        return profileList;
     }
 }

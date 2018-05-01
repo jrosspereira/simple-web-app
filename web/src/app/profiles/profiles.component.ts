@@ -9,7 +9,6 @@ import { UserProfileService } from '../user-profile.service';
 })
 export class ProfilesComponent implements OnInit {
   userProfiles : UserProfile[];
-  selectedUserProfile: UserProfile;
 
   constructor(private userProfileService: UserProfileService) {
   }
@@ -24,9 +23,4 @@ export class ProfilesComponent implements OnInit {
           .subscribe(userProfiles => this.userProfiles = userProfiles);
 
   }
-
-  onSelect(userProfile: UserProfile): void {
-    this.selectedUserProfile = userProfile;
-  }
-
 }

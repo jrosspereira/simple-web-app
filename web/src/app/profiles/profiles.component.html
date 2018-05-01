@@ -2,13 +2,14 @@
 
   <h2>Profiles</h2>
 
+  <app-user-profile-search></app-user-profile-search>
+
   <ul class="profile-list">
-    <li *ngFor="let user of userProfiles" (click)="onSelect(user)">
+    <li *ngFor="let user of userProfiles" routerLink="view/{{user.id}}">
       <span class="badge">{{user.id}}</span> {{user.fullName}}
     </li>
   </ul>
 
-  <app-user-profile-detail [userProfile]="selectedUserProfile"></app-user-profile-detail>ng
 </div>
 
 

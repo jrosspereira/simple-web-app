@@ -7,9 +7,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 var UserProfileDetailComponent = (function () {
-    function UserProfileDetailComponent() {
+    function UserProfileDetailComponent(route, userProfileService, location) {
+        this.route = route;
+        this.userProfileService = userProfileService;
+        this.location = location;
     }
     UserProfileDetailComponent.prototype.ngOnInit = function () {
+        this.getProfile();
+    };
+    UserProfileDetailComponent.prototype.getProfile = function () {
+        var _this = this;
+        var id = this.route.snapshot.paramMap.get('id');
+        this.userProfileService.getProfile(id)
+            .subscribe(function (userProfile) { return _this.userProfile = userProfile; });
+    };
+    UserProfileDetailComponent.prototype.goBack = function () {
+        this.location.back();
     };
     __decorate([
         core_1.Input()

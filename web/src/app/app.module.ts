@@ -8,17 +8,21 @@ import { UserProfileDetailComponent } from './user-profile-detail/user-profile-d
 
 import { UserProfileService } from './user-profile.service';
 import { AppRoutingModule } from './/app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { UserProfileSearchComponent } from './user-profile-search/user-profile-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfilesComponent,
-    UserProfileDetailComponent
+    UserProfileDetailComponent,
+    UserProfileSearchComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     UserProfileService
