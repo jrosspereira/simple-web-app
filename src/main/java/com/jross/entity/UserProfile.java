@@ -38,10 +38,6 @@ public class UserProfile implements Serializable{
 
     private Boolean blocked;
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
     public String getId() {
         return id;
     }
@@ -136,6 +132,19 @@ public class UserProfile implements Serializable{
 
     public void setBlocked(Boolean blocked) {
         this.blocked = blocked;
+    }
+
+    public String getFullName(){
+        if(this.getName() != null){
+            return this.getName().getFirst() + " " +
+                    this.getName().getMiddle() + " " +
+                    this.getName().getLast();
+        }
+       return null;
+    }
+
+    public Date dateReg(){
+        return this.getDateRegistered();
     }
 
     @Override
