@@ -10,6 +10,9 @@ var core_1 = require('@angular/core');
 var app_component_1 = require('./app.component');
 var profiles_component_1 = require('./profiles/profiles.component');
 var forms_1 = require('@angular/forms');
+var user_profile_detail_component_1 = require('./user-profile-detail/user-profile-detail.component');
+var user_profile_service_1 = require('./user-profile.service');
+var app_routing_module_1 = require('.//app-routing.module');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -17,13 +20,17 @@ var AppModule = (function () {
         core_1.NgModule({
             declarations: [
                 app_component_1.AppComponent,
-                profiles_component_1.ProfilesComponent
+                profiles_component_1.ProfilesComponent,
+                user_profile_detail_component_1.UserProfileDetailComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                app_routing_module_1.AppRoutingModule
             ],
-            providers: [],
+            providers: [
+                user_profile_service_1.UserProfileService
+            ],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

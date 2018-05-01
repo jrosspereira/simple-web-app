@@ -1,7 +1,8 @@
 export class UserProfile {
+  name: any;
   id: string;
   fullName: string;
-  dateReg: Date;
+  date_registered: string; //TODO this should be date
   age: number;
   email: string;
   picture: string;

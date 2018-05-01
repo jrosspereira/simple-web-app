@@ -3,11 +3,12 @@
   <h2>Profiles</h2>
 
   <ul class="profile-list">
-    <li *ngFor="let user of users">
+    <li *ngFor="let user of userProfiles" (click)="onSelect(user)">
       <span class="badge">{{user.id}}</span> {{user.fullName}}
     </li>
   </ul>
 
+  <app-user-profile-detail [userProfile]="selectedUserProfile"></app-user-profile-detail>ng
 </div>
 
 

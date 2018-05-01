@@ -143,10 +143,6 @@ public class UserProfile implements Serializable{
        return null;
     }
 
-    public Date dateReg(){
-        return this.getDateRegistered();
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
